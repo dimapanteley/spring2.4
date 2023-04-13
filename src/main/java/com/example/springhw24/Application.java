@@ -3,7 +3,7 @@ package com.example.springhw24;
 import org.springframework.boot.SpringApplication;
 
 public class Application {
-    public static void main(String[] args) {
+    public static  void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
@@ -16,7 +16,7 @@ public class Application {
     }
 
     public int multiply(int num1, int num2) {
-        return 0;
+        return 0; //
     }
 
     public Object separate(int num1, int num2) {

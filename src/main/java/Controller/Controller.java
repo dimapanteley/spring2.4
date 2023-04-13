@@ -15,7 +15,7 @@ public class Controller {
 
     @GetMapping()
     public String calculator(){
-        return "<strong>Добро пожаловать в калькулятор</strong>";
+        return "<strong. >Добро пожаловать в калькулятор</strong>";
     }
     @GetMapping("/plus")
     public String plus(@RequestParam int num1, int num2){
