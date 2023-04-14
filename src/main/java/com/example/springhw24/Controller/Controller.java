@@ -1,17 +1,17 @@
-package Controller;
-
-import com.example.springhw24.Application;
+package com.example.springhw24.Controller;
+import com.example.springhw24.Service.CalculatorService;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @RequestMapping("/calculator")
-public class Controller {
-    //    CalculatorService cs = new CalculatorService();
-    Application cs;
+public class  Controller {
+    private final CalculatorService сalculatorService;
 
-    public Controller(Application cs) {
-        this.cs = cs;
+    public Controller (CalculatorService сalculatorService) {
+        this.сalculatorService=сalculatorService;
     }
+
 
     @GetMapping()
     public String calculator(){
@@ -19,18 +19,18 @@ public class Controller {
     }
     @GetMapping("/plus")
     public String plus(@RequestParam int num1, int num2){
-        return num1 + " + " + num2 + " = " + cs.plus(num1, num2);
+        return сalculatorService.plus(num1,num2);
     }
     @GetMapping("/minus")
     public String minus(@RequestParam int num1, int num2){
-        return num1 + " - " + num2 + " = " + cs.minus(num1, num2);
+        return сalculatorService.minus(num1,num2);
     }
     @GetMapping("/multiply")
     public String multiply(@RequestParam int num1, int num2){
-        return num1 + " х " + num2 + " = " + cs.multiply(num1, num2);
+        return сalculatorService.multiply(num1,num2);
     }
     @GetMapping("/separate")
     public String separate(@RequestParam int num1, int num2){
-        return num1 + " / " + num2 + " = " + String.format("%.4f", cs.separate(num1, num2));
+        return сalculatorService.separate(num1,num2);
     }
 }
